@@ -6,13 +6,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class ListaNumero {
-    private List<Integer> listanumeros;
+    private final List<Integer> listanumeros;
 
     public ListaNumero() {
-        this.listanumeros = new ArrayList<Integer>();
+        this.listanumeros = new ArrayList<>();
     }
     public ListaNumero(Integer...numero){
-        this.listanumeros = (Arrays.asList(numero));
+        this.listanumeros = new ArrayList<>(Arrays.asList(numero));
+        System.out.println(listanumeros.getClass().getName());
     }
 
     public void adicionarNumero(int numero){
