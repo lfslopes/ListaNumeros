@@ -1,0 +1,47 @@
+package numeros;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class ListaNumero {
+    private List<Integer> listanumeros;
+
+    public ListaNumero() {
+        this.listanumeros = new ArrayList<Integer>();
+    }
+    public ListaNumero(Integer...numero){
+        this.listanumeros = (Arrays.asList(numero));
+    }
+
+    public void adicionarNumero(int numero){
+        this.listanumeros.add(numero);
+    }
+    public int calcularSoma() {
+        int soma = 0;
+        for (Integer numero : this.listanumeros)
+            soma += numero;
+
+        return soma;
+    }
+    public int encontraMaiorNumero() {
+        int maior = this.listanumeros.getFirst();
+        for (Integer numero : this.listanumeros){
+            if (numero > maior)
+                maior = numero;
+        }
+        return maior;
+    }
+    public int encontraMenorNumero() {
+        int menor = this.listanumeros.getFirst();
+        for (Integer numero : this.listanumeros){
+            if (numero < menor)
+                menor = numero;
+        }
+        return menor;
+    }
+    public List<Integer> exibirNumeros() {
+        return Collections.unmodifiableList(this.listanumeros);
+    }
+}
