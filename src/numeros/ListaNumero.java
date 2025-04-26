@@ -13,7 +13,6 @@ public class ListaNumero {
     }
     public ListaNumero(Integer...numero){
         this.listanumeros = new ArrayList<>(Arrays.asList(numero));
-        System.out.println(listanumeros.getClass().getName());
     }
 
     public void adicionarNumero(int numero){
